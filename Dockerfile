@@ -1,23 +1,8 @@
-FROM ruby:2.3-slim
-MAINTAINER john@doe.com
+FROM kyan/rails:ruby2.3.1
+MAINTAINER duncan@kyan.com
 ENV REFRESHED_AT 2016-07-27
 
-# Install packages
-RUN apt-get update && apt-get install -y --no-install-recommends \
-  build-essential \
-  ruby-dev \
-  libgdbm-dev \
-  libncurses5-dev \
-  libffi-dev \
-  libyaml-dev \
-  libreadline-dev \
-  libpq-dev \
-  nodejs \
-  && rm -rf /var/lib/apt/lists/*
-
-# Setup app location
-RUN mkdir -p /app
-WORKDIR /app
+# You can optionally add your app specific dependencies below
 
 # Install gems
 ADD Gemfile /app/Gemfile

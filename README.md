@@ -12,14 +12,18 @@ $ docker-compose up
 Now you need to get your databases ready
 
 ```
-$ docker-compose run web bin/setup
+$ docker-compose exec web bin/setup
 ```
 
 Now you can run the tests
 
 ```
-$ docker-compose run web bin/rails test
+$ docker-compose exec web bin/rails test
 ```
+
+You should now be able to visit: http:docker_demo.lvh.me:3000/books
+
+Bingo! :smiley:
 
 # Extras
 

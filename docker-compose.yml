@@ -1,11 +1,11 @@
 version: '2'
 services:
   web:
-    image: docker_demo:v2
+    image: docker_demo:v1
     build:
       context: .
-      #dockerfile: Dockerfile
-      dockerfile: Dockerfile.legacy
+      dockerfile: Dockerfile
+      #dockerfile: Dockerfile.legacy
     volumes:
       - .:/app
     ports:
